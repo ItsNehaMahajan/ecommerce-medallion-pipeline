@@ -44,3 +44,23 @@ Business tables:
 
 Power BI
 Interactive dashboard created from Gold data.
+
+
+
+                  E-COMMERCE DATA ENGINEERING
+                           │
+              ┌────────────┴────────────┐
+              │                         │
+        AWS DATABRICKS              POWER BI
+              │                         │
+        ┌─────▼─────┐              Dashboard
+        │  BRONZE   │
+        └─────┬─────┘
+              │
+        ┌─────▼─────┐
+        │  SILVER   │
+        └─────┬─────┘
+              │
+        ┌─────▼─────┐
+        │   GOLD    │
+        └───────────┘
