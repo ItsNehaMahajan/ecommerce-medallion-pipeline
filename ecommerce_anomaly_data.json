@@ -1,0 +1,342 @@
+{
+  "ecommerce": {
+    "orders": [
+      {
+        "order_id": "ORD1001",
+        "customer_id": "CUST01",
+        "customer_name": "Amit Sharma",
+        "email": "amit@example.com",
+        "city": "Pune",
+        "state": "Maharashtra",
+        "product_id": "PROD01",
+        "product_name": "Samsung Galaxy",
+        "category": "Electronics",
+        "price": 15000,
+        "quantity": 1,
+        "discount": 700,
+        "order_date": "2024-12-01",
+        "payment": {
+          "transaction_id": "TXN778899",
+          "method": "UPI",
+          "amount": 14300,
+          "status": "Success"
+        },
+        "delivery": {
+          "delivery_id": "DLV1001",
+          "expected_date": "2024-12-05",
+          "actual_date": "2024-12-04",
+          "status": "Delivered",
+          "partner": "Delhivery"
+        }
+      },
+      {
+        "order_id": "ORD1001",
+        "customer_id": "CUST01",
+        "customer_name": "Amit Sharma",
+        "email": "amit@example.com",
+        "city": "Pune",
+        "state": "Maharashtra",
+        "product_id": "PROD01",
+        "product_name": "Samsung Galaxy",
+        "category": "Electronics",
+        "price": 15000,
+        "quantity": 1,
+        "discount": 700,
+        "order_date": "2024-12-01",
+        "payment": {
+          "transaction_id": "TXN778899",
+          "method": "UPI",
+          "amount": 14300,
+          "status": "Success"
+        },
+        "delivery": {
+          "delivery_id": "DLV1001",
+          "expected_date": "2024-12-05",
+          "actual_date": "2024-12-04",
+          "status": "Delivered",
+          "partner": "Delhivery"
+        }
+      },
+      {
+        "order_id": "ORD1002",
+        "customer_id": "CUST02",
+        "customer_name": "Priya Patel",
+        "email": "priya@example.com",
+        "city": "Ahmedabad",
+        "state": "Gujarat",
+        "product_id": "PROD02",
+        "product_name": "Philips Mixer",
+        "category": "Home Appliances",
+        "price": "3500",
+        "quantity": "2",
+        "discount": "200",
+        "order_date": "01/12/2024",
+        "payment": {
+          "transaction_id": "TXN778900",
+          "method": "CARD",
+          "amount": "6800",
+          "status": "Success"
+        },
+        "delivery": {
+          "delivery_id": "DLV1002",
+          "expected_date": "2024-12-05",
+          "actual_date": "2024-12-05",
+          "status": "Delivered",
+          "partner": "BlueDart"
+        }
+      },
+      {
+        "order_id": "ORD1003",
+        "customer_id": "CUST03",
+        "customer_name": "Rahul Verma",
+        "email": null,
+        "city": "New Delhi",
+        "state": "Delhi",
+        "product_id": "PROD03",
+        "product_name": "HP Laptop",
+        "category": "Electronics",
+        "price": 55000,
+        "quantity": 1,
+        "discount": null,
+        "order_date": "2024-12-02",
+        "payment": {
+          "transaction_id": "TXN778901",
+          "method": "NetBanking",
+          "amount": 55000,
+          "status": "Success"
+        },
+        "delivery": {
+          "delivery_id": "DLV1003",
+          "expected_date": "2024-12-06",
+          "actual_date": null,
+          "status": "Out for delivery",
+          "partner": "Delhivery"
+        }
+      },
+      {
+        "order_id": "ORD1004",
+        "customer_id": null,
+        "customer_name": "Sneha Joshi",
+        "email": "sneha@example.com",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "product_id": "PROD04",
+        "product_name": "Nike Shoes",
+        "category": "Fashion",
+        "price": 4500,
+        "quantity": 1,
+        "discount": 0,
+        "order_date": "2024-12-03",
+        "payment": {
+          "transaction_id": "TXN778902",
+          "method": "UPI",
+          "amount": null,
+          "status": "Pending"
+        },
+        "delivery": {
+          "delivery_id": "DLV1004",
+          "expected_date": "2024-12-06",
+          "actual_date": "2024-12-10",
+          "status": "Delayed",
+          "partner": "Ecom Express"
+        }
+      },
+      {
+        "order_id": "ORD1005",
+        "customer_id": "CUST99",
+        "customer_name": "Vikas Singh",
+        "email": "vikas@example.com",
+        "city": "Bengaluru",
+        "state": "Karnataka",
+        "product_id": "PROD05",
+        "product_name": "Prestige Cooker",
+        "category": "Home Appliances",
+        "price": null,
+        "quantity": 1,
+        "discount": 100,
+        "order_date": "2024-12-03",
+        "payment": {
+          "transaction_id": "TXN778903",
+          "method": "COD",
+          "amount": 2900,
+          "status": "Success"
+        },
+        "delivery": {
+          "delivery_id": "DLV1005",
+          "expected_date": "06/12/2024",
+          "actual_date": "2024-12-05",
+          "status": "Delivered",
+          "partner": "Delhivery"
+        }
+      },
+      {
+        "order_id": "ORD1006",
+        "customer_id": "CUST04",
+        "customer_name": "Sneha Joshi",
+        "email": "sneha@example.com",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "product_id": "PROD06",
+        "product_name": "Boat Earbuds",
+        "category": "Electronics",
+        "price": -1999,
+        "quantity": 1,
+        "discount": 0,
+        "order_date": "2024-12-04",
+        "payment": {
+          "transaction_id": "TXN778904",
+          "method": "UPI",
+          "amount": -1999,
+          "status": "Failed"
+        },
+        "delivery": {
+          "delivery_id": "DLV1006",
+          "expected_date": "2024-12-07",
+          "actual_date": "2024-12-07",
+          "status": "Cancelled",
+          "partner": "BlueDart"
+        }
+      },
+      {
+        "order_id": "ORD1006",
+        "customer_id": "CUST04",
+        "customer_name": "Sneha Joshi",
+        "email": "sneha@example.com",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "product_id": "PROD06",
+        "product_name": "Boat Earbuds",
+        "category": "Electronics",
+        "price": -1999,
+        "quantity": 1,
+        "discount": 0,
+        "order_date": "2024-12-04",
+        "payment": {
+          "transaction_id": "TXN778904",
+          "method": "UPI",
+          "amount": -1999,
+          "status": "Failed"
+        },
+        "delivery": {
+          "delivery_id": "DLV1006",
+          "expected_date": "2024-12-07",
+          "actual_date": "2024-12-07",
+          "status": "Cancelled",
+          "partner": "BlueDart"
+        }
+      },
+      {
+        "order_id": "ORD1007",
+        "customer_id": "CUST05",
+        "customer_name": "Karan Mehta",
+        "email": "karan@example.com",
+        "city": "Pune",
+        "state": "Maharashtra",
+        "product_id": "PROD03",
+        "product_name": "HP Laptop",
+        "category": "Electronics",
+        "price": 55000,
+        "quantity": "one",
+        "discount": 1000,
+        "order_date": "invalid-date",
+        "payment": {
+          "transaction_id": null,
+          "method": "CARD",
+          "amount": "55000",
+          "status": "Success"
+        },
+        "delivery": {
+          "delivery_id": null,
+          "expected_date": "2024-12-08",
+          "actual_date": "2024-12-09",
+          "status": "Delivered",
+          "partner": "Delhivery"
+        }
+      },
+      {
+        "order_id": null,
+        "customer_id": "CUST01",
+        "customer_name": "Amit Sharma",
+        "email": "wrong-email",
+        "city": "Pune",
+        "state": "Maharashtra",
+        "product_id": "PROD02",
+        "product_name": "Philips Mixer",
+        "category": "Home Appliances",
+        "price": 3500,
+        "quantity": 1,
+        "discount": 100,
+        "order_date": "2024-12-05",
+        "payment": {
+          "transaction_id": "TXN778906",
+          "method": "UPI",
+          "amount": 3400,
+          "status": "Success"
+        },
+        "delivery": {
+          "delivery_id": "DLV1008",
+          "expected_date": "2024-12-09",
+          "actual_date": "2024-12-08",
+          "status": "Delivered",
+          "partner": "Delhivery"
+        }
+      },
+      {
+        "order_id": "ORD1009",
+        "customer_id": "CUST06",
+        "customer_name": "Neha Kapoor",
+        "email": "neha@example.com",
+        "city": "Nashik",
+        "state": "Maharashtra",
+        "product_id": "PROD07",
+        "product_name": "Smart Watch",
+        "category": "Electronics",
+        "price": 2999,
+        "quantity": 3,
+        "discount": 300,
+        "order_date": "2024/12/06",
+        "payment": {
+          "transaction_id": "TXN778907",
+          "method": "UPI",
+          "amount": 8697,
+          "status": "SUCCESS"
+        },
+        "delivery": {
+          "delivery_id": "DLV1009",
+          "expected_date": "2024-12-10",
+          "actual_date": "2024-12-13",
+          "status": "Delivered",
+          "partner": "Delhivery"
+        }
+      },
+      {
+        "order_id": "ORD1010",
+        "customer_id": "CUST07",
+        "customer_name": "",
+        "email": "arjun@example.com",
+        "city": null,
+        "state": "Maharashtra",
+        "product_id": "PROD08",
+        "product_name": "Office Chair",
+        "category": "Furniture",
+        "price": 7999,
+        "quantity": 0,
+        "discount": 500,
+        "order_date": "2024-12-07",
+        "payment": {
+          "transaction_id": "TXN778908",
+          "method": "CARD",
+          "amount": 0,
+          "status": "Success"
+        },
+        "delivery": {
+          "delivery_id": "DLV1010",
+          "expected_date": "2024-12-12",
+          "actual_date": null,
+          "status": "Pending",
+          "partner": "BlueDart"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,280 @@
+MEDALLION ARCHITECTURE – DATA ENGINEERING ASSIGNMENT
+
+Objective
+---------
+Design and implement a data pipeline using Bronze → Silver → Gold architecture.
+The objective is to understand how raw data is ingested, cleaned/transformed,
+and converted into business-ready datasets.
+
+Business Scenario
+-----------------
+You are working as a Data Engineer for an E-commerce company.
+
+The company receives:
+- Customer data
+- Product data
+- Orders data
+- Payment data
+- Delivery data
+
+The source data contains duplicates, NULL values, incorrect data types,
+invalid records, and inconsistent formats.
+
+Your task is to build a Medallion Architecture to process this data.
+
+
+1. BRONZE LAYER – RAW DATA
+--------------------------
+
+Requirement:
+Load the source files into the Bronze layer without applying business
+transformations.
+
+Suggested structure:
+
+Data Lake
+|
++-- Bronze
+    +-- customers
+    +-- products
+    +-- orders
+    +-- payments
+    +-- deliveries
+
+Tasks:
+1. Read CSV/JSON files using PySpark.
+2. Store the data in Bronze.
+3. Preserve the original data.
+4. Add audit columns:
+   - ingestion_date
+   - source_file
+   - ingestion_timestamp
+
+Example:
+
+df = spark.read.option("header", True).csv("/input/orders")
+
+df = df.withColumn("ingestion_timestamp", current_timestamp())        .withColumn("source_file", input_file_name())
+
+df.write.mode("append").parquet("/bronze/orders")
+
+
+2. SILVER LAYER – CLEANED AND TRANSFORMED DATA
+-----------------------------------------------
+
+Create clean and standardized datasets from Bronze.
+
+Tasks:
+1. Remove duplicate records.
+2. Handle NULL values.
+3. Convert columns to correct data types.
+4. Standardize column names.
+5. Remove invalid records.
+6. Standardize date formats.
+7. Apply business rules.
+8. Join related datasets.
+
+Example input:
+
+order_id | customer_id | amount | order_date
+101      | C01         | 500    | 2026-01-01
+101      | C01         | 500    | 2026-01-01
+102      | C02         | NULL   | 2026-01-02
+
+Expected actions:
+- Remove duplicate order_id.
+- Handle NULL amount.
+- Convert order_date to DateType.
+- Validate customer IDs.
+
+Suggested structure:
+
+Silver
+|
++-- customers_clean
++-- products_clean
++-- orders_clean
++-- payments_clean
++-- deliveries_clean
+
+
+3. GOLD LAYER – BUSINESS LAYER
+-------------------------------
+
+Create business-ready tables for Power BI, Tableau, or reporting.
+
+A. Daily Sales
+
+Columns:
+- sale_date
+- total_orders
+- total_sales
+- average_order_value
+- unique_customers
+
+B. Customer Analytics
+
+Columns:
+- customer_id
+- customer_name
+- total_orders
+- total_spent
+- average_order_value
+- last_order_date
+- customer_segment
+
+Customer segmentation:
+- total_spent >= 100000 : Platinum
+- total_spent >= 50000  : Gold
+- total_spent >= 10000  : Silver
+- otherwise             : Bronze
+
+C. Product Analytics
+
+Columns:
+- product_id
+- product_name
+- category
+- total_quantity_sold
+- total_revenue
+- average_price
+
+D. Delivery Performance
+
+Columns:
+- delivery_id
+- order_id
+- delivery_date
+- expected_date
+- actual_date
+- delivery_status
+- delay_days
+
+Delivery classification:
+- delay_days <= 0 : On Time
+- delay_days 1-3  : Slightly Delayed
+- delay_days > 3  : Delayed
+
+
+4. ADVANCED TASKS
+-----------------
+
+Task 1 – Incremental Load
+Instead of processing the entire dataset every day, process only new or
+updated records.
+
+Task 2 – SCD Type 2
+Implement Slowly Changing Dimension Type 2 for Customer data.
+
+Required columns:
+- customer_id
+- customer_name
+- city
+- state
+- start_date
+- end_date
+- is_current
+
+Task 3 – Data Quality
+Create checks for:
+- Duplicate records
+- NULL customer_id
+- NULL order_id
+- Negative amount
+- Invalid dates
+- Invalid customer IDs
+
+Create a separate Rejected Records dataset.
+
+Task 4 – Partitioning
+Partition the Orders Gold table by:
+- year
+- month
+
+Explain why partitioning improves query performance.
+
+Task 5 – Optimization
+Apply and explain:
+- repartition()
+- coalesce()
+- Broadcast Join
+- Cache/Persist
+- Partition pruning
+- Predicate pushdown
+
+
+5. TECHNOLOGY REQUIREMENTS
+--------------------------
+
+Students should use:
+- Python
+- PySpark
+- SQL
+- Data Lake / Local Storage
+- Delta Lake (preferred)
+- Databricks (if available)
+- Power BI/Tableau (optional)
+
+
+6. FINAL ARCHITECTURE
+---------------------
+
+Source Systems
+      |
+      v
++----------------+
+| Bronze Layer   |
+| Raw Data       |
++-------+--------+
+        |
+        v
++----------------+
+| Silver Layer   |
+| Cleaned Data   |
++-------+--------+
+        |
+        v
++----------------+
+| Gold Layer     |
+| Business Data  |
++-------+--------+
+        |
+        v
++----------------------+
+| Power BI / Tableau   |
+| Reporting            |
++----------------------+
+
+
+7. DELIVERABLES
+---------------
+
+Students must submit:
+1. Architecture diagram
+2. PySpark notebook/code
+3. Bronze, Silver and Gold datasets
+4. Data-quality report
+5. SQL queries
+6. README explaining the pipeline
+7. Screenshots of execution
+8. Gold-layer dashboard (optional)
+
+
+8. BONUS CHALLENGE
+------------------
+
+Implement the complete pipeline using Delta Lake, including:
+- Incremental processing
+- MERGE/upsert
+- SCD Type 2
+- Schema evolution
+- Time travel
+- Data-quality checks
+- Pipeline logging
+
+
+EXPECTED OUTCOME
+----------------
+By completing this assignment, students should be able to explain and
+implement a real-world Bronze → Silver → Gold data engineering pipeline,
+rather than only knowing the theory.
